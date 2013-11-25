@@ -1,7 +1,7 @@
 Summary:	Wrapper library to imlib2
 Name:		giblib
 Version:	1.2.4
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		X11/Libraries
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz

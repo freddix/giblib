@@ -1,7 +1,7 @@
 Summary:	Wrapper library to imlib2
 Name:		giblib
 Version:	1.2.4
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		X11/Libraries
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
@@ -47,7 +47,10 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+    DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,6 +69,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/%{name}
-%{_libdir}/lib*.la
 %{_pkgconfigdir}/*.pc
 
